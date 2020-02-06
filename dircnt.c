@@ -137,6 +137,9 @@ void count(char *path, struct filecount *counts) {
           }
 
           counts->files++;
+          if (counts->files % 10000 == 0 || counts->dirs % 10000 == 0) {
+            printf("count so far: %ld files %ld folders\n", counts->files, counts->dirs);
+          }
       }
     }
 
